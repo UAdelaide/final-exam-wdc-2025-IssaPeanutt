@@ -124,8 +124,12 @@
 
             if (!res.ok) {
               const error = await res.json();
-              alert
+              alert('Logout failed: ' + error.message);
+              return;
             }
+          } catch (err) {
+            alert('Logout failed: ' + err.message);
+          }
         }
 
         onMounted(() => {
