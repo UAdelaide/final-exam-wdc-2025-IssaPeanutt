@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
+const { render } = require('../app');
 
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
@@ -60,6 +61,7 @@ router.post('/logout', (req, res) => {
     if (err) {
       return res.status(500).json({ error: 'Logout failed' });
     }
+    res.clearCookie('connect.sid'); // Clear the session cookie
     res.json({ message: 'Logged out successfully' });
   });
 });
