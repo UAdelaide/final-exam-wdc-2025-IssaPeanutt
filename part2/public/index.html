@@ -16,7 +16,10 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <label>Username</label>
-    <input
+    <input type="text" c-model="username" class="form-control mb-3" placeholder="Enter your username">
+
+    <label>Password</label>
+    <input type="password" c-model="password" class="form-control mb-3" placeholder="Enter your password">
 
       <script>
         const { createApp } = Vue;
