@@ -113,7 +113,8 @@
             const data= await response.json();
 
             const dogPhotos = await Promise.all(
-              data
+              data.map(async (dog) => {
+                i
             )
           } catch (error) {
             console.error('Error loading dogs:', error);
