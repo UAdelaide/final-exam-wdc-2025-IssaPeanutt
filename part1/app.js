@@ -20,10 +20,6 @@ app.use('/users', usersRouter);
 
 let db;
 
-app.use('/users', usersRouter);
-
-let db;
-
 (async () => {
   try {
     const connection = await mysql.createConnection({
