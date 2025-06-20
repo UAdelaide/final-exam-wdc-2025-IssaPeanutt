@@ -24,7 +24,24 @@
     </div>
     <div id="dogList" class="container mb-5">
       <h2 class="mt-5">All Registered Dogs</h2>
-      
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Dog ID</th>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Owner</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="dog in dogs" :key="dog.dog_id">
+            <td>{{ dog.dog_id }}</td>
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.breed }}</td>
+            <td>{{ dog.size }}</td>
+            <td>{{ dog.owner_username }}</td>
+          </tr>
+        </tbody>
     </div>
   </main>
 
