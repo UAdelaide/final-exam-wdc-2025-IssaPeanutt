@@ -40,6 +40,11 @@
       },
       methods: {
         async login() {
+          if (!this.username || !this.password) {
+              alert('Please enter both username and password');
+              return;
+            }
+            
           try {
             const response = await fetch('/api/users/login', {
               method: 'POST',
