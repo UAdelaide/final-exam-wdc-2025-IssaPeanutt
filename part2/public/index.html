@@ -99,7 +99,23 @@
           }
         }
       }
-      
+      mounted() {
+        // Fetch all registered dogs on page load
+        this.loadDogs();
+      },
+      methods: {
+        async loadDogs() {
+          try {
+            const response = await fetch('/api/dogs');
+            if (!response.ok) {
+              throw new Error('Failed to load dogs');
+            }
+            this.dogs = await response.json();
+          } catch (error) {
+            console.error('Error loading dogs:', error);
+          }
+        }
+      }
     }).mount('#app');
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
