@@ -22,12 +22,12 @@ let db;
 
 (async () => {
   try {
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'DogWalkService'
-});
+    db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'DogWalkService'
+    });
 
 app.use(express.json());
 
