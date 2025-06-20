@@ -101,10 +101,8 @@
         }
       },
       mounted() {
-        // Fetch all registered dogs on page load
         this.loadDogs();
       },
-      methods: {
         async loadDogs() {
           try {
             const response = await fetch('/api/dogs');
