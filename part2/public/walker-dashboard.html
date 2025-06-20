@@ -78,7 +78,17 @@
             message.value = '';
           }
         }
-        
+
+        async function getCurrentUser() {
+          try {
+            const res = await fetch('/api/users/current');
+            if (!res.ok) throw new Error('Failed to get current user');
+            return await res.json();
+          } catch (err) {
+            error.value = err.message;
+            return null;
+          }
+        }
         async function logout() {
           try {
             const res = await fetch('/api/users/logout', {
