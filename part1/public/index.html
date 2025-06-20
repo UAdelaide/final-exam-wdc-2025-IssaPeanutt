@@ -11,7 +11,6 @@
     <div id="app">
         <h1>Bark</h1>
 
-        // inconsistent with CSS
         <p style="font-family: 'Courier New', monospace; color: red;">
         See image
         </p>
@@ -20,7 +19,7 @@
             <img :src="dogImage" alt="Dog of the Day" class="dog-image" />
             <div class="dog-info">
                 <p><strong>Name:</strong> {{ dogName }}</p>
-                <p><strong>Width:</strong> {{ dogSize }}</p> // unclear language
+                <p><strong>Width:</strong> {{ dogSize }}</p>
             </div>
         </div>
         <button id="fetch-btn" @click="getDogImageUrl">Click Me</button>
