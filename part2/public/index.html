@@ -114,7 +114,12 @@
 
             const dogPhotos = await Promise.all(
               data.map(async (dog) => {
-                const Photo
+                const PhotoResponse = await fetch(`https://dog.ceo/api/breeds/image/random`);
+                const photoData = await PhotoResponse.json();
+                return {
+                  ...dog,
+                  photo_url: photoData.message
+                };
             )
           } catch (error) {
             console.error('Error loading dogs:', error);
