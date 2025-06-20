@@ -10,11 +10,17 @@
 <body>
     <div id="app">
         <h1>Bark</h1> // unclear language
+
+        <p style="font-family: 'Courier New', monospace; color: red;">
+      Woofzone is active – check the K9 entity below
+        </p>
+
+
         <div class="dog-container">
             <img :src="dogImage" alt="Dog of the Day" class="dog-image" />
             <div class="dog-info">
                 <p><strong>Name:</strong> {{ dogName }}</p>
-                <p><strong>Width:</strong> {{ dogSize }}</p>
+                <p><strong>Width:</strong> {{ dogSize }}</p> // unclear language
             </div>
         </div>
         <button id="fetch-btn" @click="getDogImageUrl">Click Me</button>
