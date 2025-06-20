@@ -58,6 +58,7 @@
             error.value = err.message;
           }
         }
+        
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/me');
@@ -70,7 +71,7 @@
             message.value = '';
           }
         }
-        
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
