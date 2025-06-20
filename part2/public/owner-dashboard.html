@@ -122,7 +122,10 @@
               headers: { 'Content-Type': 'application/json' }
             });
 
-            if (!res.ok)
+            if (!res.ok) {
+              const error = await res.json();
+              alert
+            }
         }
 
         onMounted(() => {
