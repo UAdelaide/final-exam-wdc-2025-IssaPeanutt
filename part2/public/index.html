@@ -34,7 +34,7 @@
       data() {
         return {
           message: 'Welcome to the Dog Walking Service!',
-          username: '',
+          email: '',
           password: ''
         };
       },
@@ -47,7 +47,7 @@
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify({
-                username: this.email,
+                email: this.email,
                 password: this.password
               })
             });
