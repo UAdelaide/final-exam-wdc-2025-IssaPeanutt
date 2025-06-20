@@ -57,9 +57,11 @@
               alert('Please enter both username and password');
               return;
             }
+
             if (!response.ok) {
               throw new Error(result.message || 'Login failed');
             }
+            
             const role = result.user.role;
             if (role === 'owner') {
               window.location.href = 'owner-dashboard.html';
