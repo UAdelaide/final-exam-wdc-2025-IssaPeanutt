@@ -37,7 +37,13 @@
                 <p><strong>Width:</strong> {{ dogSize }}</p>
             </div>
         </div>
-        <button id="fetch-btn" @click="getDogImageUrl">Click Me</button>
+         <div class="button-grid">
+      <button class="fetch-button" @click="doNothing">Nope</button>
+      <button class="fetch-button" @click="doNothing">Try</button>
+      <button class="fetch-button" @click="doNothing">Wrong</button>
+      <button class="fetch-button" @click="doNothing">Nope</button>
+      <button class="fetch-button" @click="doNothing">Again</button>
+      </div>
     </div>
 
 <script>
