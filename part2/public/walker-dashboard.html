@@ -78,7 +78,7 @@
             error.value = 'You must be logged in to apply for a walk';
             return;
           }
-          
+
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
