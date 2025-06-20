@@ -20,28 +20,28 @@ app.use('/users', usersRouter);
 
 let db;
 
+app.use('/users', usersRouter);
+
+let db;
+
 (async () => {
   try {
-    // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '' // Set your MySQL root password
+      password: '' // Adjust as needed
     });
 
-    // Create the database if it doesn't exist
     await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
     await connection.end();
 
-    // Now connect to the created database
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '',
       database: 'DogWalkService'
     });
-})();
-
+    
 // Route to return dogs as JSON
 app.get('/api/dogs', async (req, res) => {
   try {
