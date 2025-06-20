@@ -96,7 +96,14 @@
 
         const myDogs = ref([]);
 
-        async
+        async function loadMyDogs() {
+          try {
+            const res = await fetch('/api/dogs');
+            myDogs.value = await res.json();
+          } catch (err) {
+            error.value = 'Failed to load your dogs';
+          }
+        }
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
