@@ -58,7 +58,7 @@
             error.value = err.message;
           }
         }
-        
+
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/me');
@@ -73,6 +73,11 @@
         }
 
         async function applyToWalk(requestId) {
+          const user = await getCurrentUser();
+          if (!user || !user.role || user.role !== 'walker') {
+            error.value = 'You must be logged in to apply for a walk';
+            return;
+          }
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
