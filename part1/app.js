@@ -27,7 +27,20 @@ let db;
       user: 'root',
       password: '',
       database: 'DogWalkService'
+
+      await connection.query('CREATE DATABASE IF NOT EXISTS testdb');
+      await connection.end();
+
+    db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'testdb'
     });
+  } catch (err) {
+    console.error('Error connecting to the database:', err);
+  }
+})();
 
 app.use(express.json());
 
