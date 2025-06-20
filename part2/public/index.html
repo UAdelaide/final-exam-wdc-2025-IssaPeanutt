@@ -111,6 +111,8 @@
               throw new Error('Failed to load dogs');
             }
             this.dogs = await response.json();
+
+            con
           } catch (error) {
             console.error('Error loading dogs:', error);
           }
