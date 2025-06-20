@@ -39,7 +39,7 @@ router.get('/me', (req, res) => {
 router.get('/dogs', async (req, res) => {
       try {
         const [rows] = await db.execute(`
-          SELECT d.dog_id, d.name, d.size, d.owner
+          SELECT d.dog_id, d.name, d.size, d.owner_id, u.username AS owener_username
           FROM Dogs d
           JOIN Users u ON d.owner_id = u.user_id
         `);
