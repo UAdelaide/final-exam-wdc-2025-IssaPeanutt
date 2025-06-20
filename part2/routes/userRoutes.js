@@ -36,6 +36,20 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
+app.get('/api/dogs', async (req, res) => {
+  try {
+    const [rows] = await db.execute(`
+      SELECT d.dog_id, d.name, d.size, d.owner_id, u.username AS owner_username
+      FROM Dogs d
+      JOIN Users u ON d.owner_id = u.user_id
+    `);
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
