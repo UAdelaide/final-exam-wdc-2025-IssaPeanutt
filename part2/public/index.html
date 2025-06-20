@@ -98,36 +98,36 @@
           } catch (error) {
             alert('Error: ' + error.message);
           }
+        },
+        async loadDogs() {
+          try {
+            const response = await fetch('/api/dogs');
+            if (!response.ok) {
+              throw new Error('Failed to load dogs');
+            }
+            const data = await response.json();
+
+            const dogPhotos = await Promise.all(
+              data.map(async (dog) => {
+                const photoResponse = await fetch(`https://dog.ceo/api/breeds/image/random`);
+                const photoData = await photoResponse.json();
+                return {
+                  ...dog,
+                  photo_url: photoData.message
+                };
+              })
+            );
+            this.dogs = dogPhotos;
+          } catch (error) {
+            console.error('Error loading dogs:', error);
+          }
         }
       },
-      async loadDogs() {
-        try {
-          const response = await fetch('/api/dogs');
-          if (!response.ok) {
-            throw new Error('Failed to load dogs');
-          }
-          const data = await response.json();
-
-          const dogPhotos = await Promise.all(
-            data.map(async (dog) => {
-              const PhotoResponse = await fetch(`https://dog.ceo/api/breeds/image/random`);
-              const photoData = await PhotoResponse.json();
-              return {
-                ...dog,
-                photo_url: photoData.message
-              };
-            })
-          );
-          this.dogs = dogPhotos;
-        } catch (error) {
-          console.error('Error loading dogs:', error);
-        }
-      }
-    },
       mounted() {
-      this.loadDogs();
-    }
+        this.loadDogs();
+      }
     }).mount('#app');
+
 
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
