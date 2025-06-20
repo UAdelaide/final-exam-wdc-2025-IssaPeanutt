@@ -100,10 +100,7 @@
           }
         }
       },
-      mounted() {
-        this.loadDogs();
-      },
-        async loadDogs() {
+      async loadDogs() {
           try {
             const response = await fetch('/api/dogs');
             if (!response.ok) {
