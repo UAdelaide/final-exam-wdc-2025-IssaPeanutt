@@ -58,6 +58,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// GET my dogs (for owners)
 router.get('/mydogs', async (req, res) => {
   const user = req.session.user;
   if (!user || user.role !== 'owner') {
