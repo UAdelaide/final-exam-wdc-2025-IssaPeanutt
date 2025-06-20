@@ -57,7 +57,13 @@
               throw new Error(result.message || 'Login failed');
             }
             const role = result.user.role;
-            
+            if (role === 'owener') {
+              window.location.href = '/owner-dashboard';
+            } else if (role === 'walker') {
+              window.location.href = '/walker-dashboard';
+            } else {
+              alert('Unknown user role');
+            }
           }
         }
       }
