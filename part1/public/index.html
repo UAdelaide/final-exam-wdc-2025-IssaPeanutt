@@ -8,6 +8,18 @@
 </head>
 
 <body>
+    <div id="app">
+        <h1>Dog of the Day</h1>
+        <div class="dog-container">
+            <img :src="dogImage" alt="Dog of the Day" class="dog-image" />
+            <div class="dog-info">
+                <p><strong>Name:</strong> {{ dogName }}</p>
+                <p><strong>Size:</strong> {{ dogSize }}</p>
+            </div>
+        </div>
+        <button @click="getDogImageUrl">Get New Dog</button>
+    </div>
+
     
 <script>
     const { createApp } = Vue;
