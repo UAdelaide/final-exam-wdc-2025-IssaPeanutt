@@ -36,7 +36,7 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-app.get('/api/dogs', async (req, res) => {
+router.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await db.execute(`
       SELECT d.dog_id, d.name, d.size, d.owner_id, u.username AS owner_username
