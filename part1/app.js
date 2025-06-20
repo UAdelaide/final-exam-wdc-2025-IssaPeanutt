@@ -3,6 +3,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('mysql2/promise');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -16,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-const express = require('express');
+
 const app = express();
 const mysql = require('mysql2');
 const db = mysql.createConnection({
