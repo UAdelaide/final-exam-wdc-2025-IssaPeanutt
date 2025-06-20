@@ -121,15 +121,8 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' }
             });
-            const result = await res.json();
 
-            if (!res.ok) throw new Error(result.error || 'Logout failed');
-            message.value = result.message;
-            error.value = '';
-          } catch (err) {
-            error.value = err.message;
-            message.value = '';
-          }
+            if (!res.ok)
         }
 
         onMounted(() => {
