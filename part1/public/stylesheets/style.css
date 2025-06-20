@@ -1,6 +1,7 @@
 body {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  backhround : radial-gradient(circle, #000000, #333333);
+  back : radial-gradient(circle, #000000, #333333),
+  b
 }
 
 a {
