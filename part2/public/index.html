@@ -112,7 +112,9 @@
             }
             const data= await response.json();
 
-            const do
+            const dogPhotos = await Promise.all(
+              data
+            )
           } catch (error) {
             console.error('Error loading dogs:', error);
           }
