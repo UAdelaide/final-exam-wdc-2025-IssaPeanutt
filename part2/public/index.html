@@ -19,7 +19,10 @@
     <input type="text" c-model="username" class="form-control mb-3" placeholder="Enter your username">
 
     <label>Password</label>
-    <input type="password" c-model="password" class="form-control mb-3" placeholder="Enter your password">
+    <input type="password" v-model="password" class="form-control mb-3" placeholder="Enter your password">
+    <button class="btn btn-primary" @click="login">Login</button>
+  </div>
+</main>
 
       <script>
         const { createApp } = Vue;
