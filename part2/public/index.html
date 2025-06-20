@@ -110,9 +110,9 @@
             if (!response.ok) {
               throw new Error('Failed to load dogs');
             }
-            this.dogs = await response.json();
+            const data= await response.json();
 
-            con
+            const do
           } catch (error) {
             console.error('Error loading dogs:', error);
           }
