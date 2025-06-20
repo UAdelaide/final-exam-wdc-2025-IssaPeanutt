@@ -12,7 +12,9 @@
     <p>Welcome to the Dog of the Day page!</p>
 
 <script>
-    const app = Vue.createApp({
+    const { createApp } = Vue;
+
+    createApp({
         data() {
             return {
                 message: 'Hello, Dog Lovers!'
